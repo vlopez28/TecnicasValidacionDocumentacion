@@ -67,7 +67,7 @@ public class Pedido {
 		return acum;
 	}
 
-	void solicitarPedido() throws SinSaldoException{
+	public void solicitarPedido() throws SinSaldoException{
 		float total=totalPedido();
 		this.getUsuario().descontarSaldo(total);
 		this.setEstado("Pagado");
@@ -75,7 +75,7 @@ public class Pedido {
 	}
 
 
-	void prepararPedido() {
+	public void prepararPedido() {
 		this.setEstado("En preparación");
 		System.out.println("Pedido aceptado en cocina... Cocinandose...");
 		for(int i=0;i<getItems().size();i++) {
@@ -83,7 +83,7 @@ public class Pedido {
 		}
 	}
 
-	void terminarPedido() {
+	public void terminarPedido() {
 		this.setEstado("Listo para entregar");
 		System.out.println("Pedido listo para entregar...");
 	}
@@ -113,14 +113,14 @@ public class Pedido {
 		
 	}
 	
-	public void agregarUsuarioConEmailInvalido(Usuario usuario) {
-		if(usuario.esCorreoValido(usuario.getEmail())) {
-			this.usuario = usuario;
-		}
-		
-	}
+//	public void agregarUsuarioConEmailInvalido(Usuario usuario) {
+//		if(usuario.esCorreoValido(usuario.getEmail())) {
+//			this.usuario = usuario;
+//		}
+//		
+//	}
 
-	
+
 	
 	public boolean existeUsuario(Usuario usuario) {
 		if(this.usuario == null) {

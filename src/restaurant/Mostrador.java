@@ -5,7 +5,6 @@ import java.util.List;
 public class Mostrador {
 	static List<Pedido> pedidos;
 	String nombreOperador;
-
 	public Mostrador() {
 		super();
 		if(pedidos==null) 

@@ -7,7 +7,6 @@ public class ProductoBasico extends Producto implements Consumible {
 
 	}
 
-
 	@Override
 	public void consumirStock(int cantidad) {
 

@@ -57,10 +57,10 @@ public class Main {
 	Mostrador m2= new Mostrador();
 	m2.setNombreOperador("Maria");
 	
-	
+
 	Cocina c= new Cocina();
 	//c.start();
-	
+
 	Pedido p= new Pedido();
 	p.setUsuario(u1);
 	p.agregarItem(new ItemPedido(1,p1));

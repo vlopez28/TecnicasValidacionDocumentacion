@@ -14,7 +14,6 @@ public class Receta {
 		this.tiempoDeCoccion = tiempoDeCoccion;
 		this.precioVenta = precioVenta;
 	}
-
 	public List<ItemReceta> getIngredientes() {
 		return ingredientes;
 	}

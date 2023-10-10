@@ -30,7 +30,7 @@ public class AlmacenTest {
 		ingATestear.add(  new Ingrediente("huevo", "un", 150, 400));
 		ingATestear.add( new Ingrediente("fideos", "kg", 10, 300));
 		
-	
+
 	
 
 	}

@@ -3,12 +3,12 @@ package restaurant;
 import java.util.List;
 
 public class ProductoElaborado extends Producto {
-
-Receta receta;
+	String nombreComercial;
+	int tiempoDeCoccion;
+	Receta receta;
 public Receta getReceta() {
 	return receta;
 }
-
 public void setReceta(Receta receta) {
 	this.receta = receta;
 }
@@ -28,8 +28,7 @@ public void setTiempoDeCoccion(int tiempoDeCoccion) {
 	this.tiempoDeCoccion = tiempoDeCoccion;
 }
 
-String nombreComercial;
-int tiempoDeCoccion;
+
 
 	public ProductoElaborado(String nombre,float precioUnitarioVenta) {
 		super(nombre, 0, precioUnitarioVenta);

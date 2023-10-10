@@ -6,7 +6,6 @@ public abstract class Producto {
 	float precioUnitarioCompra;
 	float precioUnitarioVenta;
 	String nombre;
-
 	public float getPrecioUnitarioCompra() {
 		return precioUnitarioCompra;
 	}

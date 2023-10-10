@@ -1,5 +1,6 @@
 package test;
 
+import org.junit.BeforeClass;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -17,8 +18,8 @@ public class RecetaTest {
 	
 
 	
-	@BeforeEach
-	public static void iniciarEjemplo() {
+	@BeforeClass
+	public void iniciarEjemplo() {
 		//creo ingredientes
 		Ingrediente huevo=new Ingrediente("huevo", "unidades",240, 100);
 		Ingrediente papa = new Ingrediente("Papa","gramos",20000, 700);
@@ -32,19 +33,19 @@ public class RecetaTest {
 		
 		//creo receta
 		receta = new Receta("Tortilla",15, 3000);
-	//	receta.addIngrediente(ir3);
-		//receta.addIngrediente(ir4);
-		//receta.addIngrediente(ir5);
+		receta.addIngrediente(ir3);
+		receta.addIngrediente(ir4);
+		receta.addIngrediente(ir5);
 		
 	}
 	
 	@Test
 	@DisplayName("Una receta está compuesta por uno o más ingredientes ")
 	public void verificarCantidadIngredientes() {
-		Assertions.assertTrue(receta.getIngredientes().isEmpty());
-	//	Assertions.assertEquals(2, receta.getIngredientes().size());
+		//Assertions.assertFalse(receta.getIngredientes().isEmpty());
+		Assertions.assertEquals(3, receta.getIngredientes().size());
 	}
-	
+
 	
 	//No es posible realizar una receta si no se cuenta con todos los ingredientes 
 

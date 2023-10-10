@@ -25,7 +25,7 @@ public class Usuario {
 		saldoCuenta+=cuanto;
 		
 	}
-	float descontarSaldo(float cuanto) throws SinSaldoException {
+	public float descontarSaldo(float cuanto) throws SinSaldoException {
 		if((saldoCuenta-cuanto)<0) throw new SinSaldoException();
 		else
 			saldoCuenta-= cuanto;
@@ -64,10 +64,10 @@ public class Usuario {
 		return email;
 	}
 	
-	public boolean esCorreoValido(String email) {
-        // Verificar si el correo contiene '@'
-        return email.contains("@");
-    }
+//	public boolean esCorreoValido(String email) {
+//        // Verificar si el correo contiene '@'
+//        return email.contains("@");
+//    }
 	
 	@Override
 	public boolean equals(Object obj) {
@@ -80,7 +80,6 @@ public class Usuario {
 		Usuario other = (Usuario) obj;
 		return Objects.equals(email, other.email);
 	}
-
 //	
 //	public void setEmail(String email) {
 //		if(email.contains("@")) {
