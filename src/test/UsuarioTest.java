@@ -3,10 +3,16 @@ package test;
 
 
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Stream;
+
 import org.junit.BeforeClass;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.DynamicTest;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestFactory;
 
 import restaurant.Ingrediente;
 import restaurant.ItemPedido;
@@ -54,6 +60,29 @@ public class UsuarioTest {
 		//me retorna false xq tiene correo sin @
 		Assertions.assertFalse(this.esCorreoValido(usuarioInvalido.getEmail()));
 	}
+	
+	@TestFactory
+	@DisplayName("test dinamico, correo valido")
+	 Stream<DynamicTest> dynamicTestsFromUsuarios() {
+	    List<Usuario>  testList = new  ArrayList<Usuario>();
+	    Usuario u1 =new Usuario("Homero Simpson", 0, 350, "homerojsimpson@springfield.com");
+		Usuario u2 =new Usuario("Barney Gomez", 0, 0, "el14gomez@springfield.com");
+		Usuario u3 =new Usuario("Edna Krabappel", 1, 0, "ednak@springfield.com");
+		Usuario u4 =new Usuario("Homero", 0, 0, "homerojsimpson@springfield.com");
+	    
+		testList.add(u1);
+		testList.add(u2);
+		testList.add(u3);
+		testList.add(u4);
+	        return testList.stream()
+		            .map(dom -> DynamicTest.dynamicTest("Testing: " + dom.getNombreYApellido(), () -> {
+		                
+		                Assertions.assertTrue(this.esCorreoValido(dom.getEmail()));
+		            }));
+
+		}    
+	
+	
 
 	//Un pedido reduce el saldo de un usuario 
 

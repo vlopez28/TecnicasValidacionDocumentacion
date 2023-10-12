@@ -60,5 +60,9 @@ public class ProductoTest {
 		}
 		return false;
 	}
+	
+	//b. No se puede crear un usuario con un correo electrónico inválido
+	//(contiene @) 
+
 
 }
